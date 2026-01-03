@@ -11,3 +11,10 @@ cmake --build build
 ```
 cmake --build build --target run 
 ```
+
+# Resources
+## Practice Ladder
+[Ladders](https://earthshakira.github.io/a2oj-clientside/server/Ladders.html)
+
+## Algorithms
+https://cp-algorithms.com/
