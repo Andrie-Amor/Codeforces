@@ -9,7 +9,7 @@ set(PROBLEM_FILE main.cpp CACHE STRING "Source file to build")
 add_executable(cf ${PROBLEM_FILE})
 
 add_custom_target(run
-    COMMAND cf < ${CMAKE_SOURCE_DIR}/input.txt > ${CMAKE_SOURCE_DIR}/output.txt
+    COMMAND cf < ${CMAKE_SOURCE_DIR}/input.txt | tee ${CMAKE_SOURCE_DIR}/output.txt
     DEPENDS cf
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 )
