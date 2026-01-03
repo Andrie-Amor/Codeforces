@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <iostream>
-#include <string>
 
 int main() {
   std::ios::sync_with_stdio(false);
@@ -26,20 +25,11 @@ int main() {
     std::cout << "-1";
     return 0;
   }
-  if (five_count / 9 == 0) {
-    std::cout << "0";
-    return 0;
-  }
 
-  std::string ans;
-  for (int i = 0; i < (five_count / 9) * 9; i++) {
-    ans += "5";
-  }
-  for (int i = 0; i < zero_count; i++) {
-    ans += "0";
-  }
+  std::string answer("5", (five_count / 9) * 9);
+  answer += std::string("0", zero_count);
 
-  std::cout << ans;
+  std::cout << answer;
 
   return 0;
 }
