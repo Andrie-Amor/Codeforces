@@ -2,14 +2,17 @@
 Hi!
 
 ## Compilaton Commands
-### Build
+### Build and Run C++
 ```
 cmake -S . -B build -DPROBLEM_FILE=main.cpp
 cmake --build build
-```
-### Build and Run
-```
 cmake --build build --target run 
+```
+
+### Build and Run Rust
+```
+cargo build
+cargo run < input.txt | tee output.txt
 ```
 
 # Resources
