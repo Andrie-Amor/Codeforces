@@ -1,0 +1,5 @@
+[
+  {
+    "include": ["<__ostream/basic_ostream.h>", "private", "<iostream>", "public"]
+  }
+]

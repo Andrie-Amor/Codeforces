@@ -5,6 +5,17 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+option(ENFORCE_IWYU "Fail the build when headers are missing or extra" ON)
+if(ENFORCE_IWYU)
+    find_program(IWYU_PATH NAMES include-what-you-use iwyu)
+    if(IWYU_PATH)
+        set(CMAKE_CXX_INCLUDE_WHAT_YOU_USE
+            ${IWYU_PATH};-Xiwyu;--error;-Xiwyu;--mapping_file=${CMAKE_SOURCE_DIR}/iwyu.imp)
+    else()
+        message(FATAL_ERROR "include-what-you-use not found. Install it or configure with -DENFORCE_IWYU=OFF.")
+    endif()
+endif()
+
 set(PROBLEM_FILE main.cpp CACHE STRING "Source file to build")
 add_executable(cf ${PROBLEM_FILE})
 
